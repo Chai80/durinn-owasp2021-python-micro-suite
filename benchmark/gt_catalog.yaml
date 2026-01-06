@@ -518,7 +518,7 @@ items:
   route: null
   start_line: 10
   end_line: 12
-  title: create app
+  title: create_app_debug_true
 - id: OWASP2021_A05_CFG_02
   owasp: A05
   branch: owasp2021-a05-security-misconfiguration
@@ -529,7 +529,7 @@ items:
   route: null
   start_line: 14
   end_line: 16
-  title: create app
+  title: create_app_hardcoded_secret_key
 - id: OWASP2021_A05_CFG_03
   owasp: A05
   branch: owasp2021-a05-security-misconfiguration
@@ -540,7 +540,7 @@ items:
   route: null
   start_line: 18
   end_line: 20
-  title: create app
+  title: create_app_session_cookie_secure_false
 - id: OWASP2021_A05_CFG_04
   owasp: A05
   branch: owasp2021-a05-security-misconfiguration
@@ -551,7 +551,7 @@ items:
   route: null
   start_line: 22
   end_line: 24
-  title: create app
+  title: create_app_session_cookie_httponly_false
 - id: OWASP2021_A05_CFG_05
   owasp: A05
   branch: owasp2021-a05-security-misconfiguration
@@ -562,7 +562,7 @@ items:
   route: null
   start_line: 26
   end_line: 28
-  title: create app
+  title: create_app_session_cookie_samesite_none
 - id: OWASP2021_A05_CFG_06
   owasp: A05
   branch: owasp2021-a05-security-misconfiguration
@@ -573,7 +573,7 @@ items:
   route: null
   start_line: 39
   end_line: 41
-  title: insecure headers
+  title: after_request_cors_wildcard
 - id: OWASP2021_A05_CFG_07
   owasp: A05
   branch: owasp2021-a05-security-misconfiguration
@@ -584,7 +584,7 @@ items:
   route: null
   start_line: 43
   end_line: 45
-  title: insecure headers
+  title: after_request_x_frame_options_allowall
 - id: OWASP2021_A05_CFG_08
   owasp: A05
   branch: owasp2021-a05-security-misconfiguration
@@ -595,7 +595,7 @@ items:
   route: null
   start_line: 47
   end_line: 49
-  title: insecure headers
+  title: after_request_x_content_type_options_nosniff
 - id: OWASP2021_A05_CFG_09
   owasp: A05
   branch: owasp2021-a05-security-misconfiguration
@@ -606,7 +606,7 @@ items:
   route: null
   start_line: 55
   end_line: 58
-  title: verbose error handler
+  title: verbose_error_handler_returns_raw_error
 - id: OWASP2021_A05_CFG_10
   owasp: A05
   branch: owasp2021-a05-security-misconfiguration
@@ -617,7 +617,7 @@ items:
   route: null
   start_line: 66
   end_line: 68
-  title: verbose error handler
+  title: app_run_debug_true_bind_all_interfaces
 - id: OWASP2021_A07_01
   owasp: A07
   branch: owasp2021-a07-identification-authentication-failures
