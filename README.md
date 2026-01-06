@@ -27,3 +27,17 @@ Each intentionally vulnerable region is bracketed by anchor comments like:
 - `# GT:OWASP2021_A03_01_END`
 
 These anchors are designed to be machine-resolved to exact line ranges for benchmarking.
+
+## Benchmark sets (core / extended / tracks)
+
+To make it easier to benchmark multiple scanners consistently (Aikido, Snyk, Semgrep, SonarQube), this repo includes a
+machine-readable definition of **benchmark sets** under [`benchmark/`](benchmark/):
+
+- **Core SAST intersection set**: high-signal static patterns most scanners should catch.
+- **Extended set**: still-static, but more tool-dependent (differences are the point).
+- **Per-track** notes: SAST vs SCA vs IaC.
+
+Start with:
+
+- `benchmark/suite_sets.yaml`
+- `benchmark/gt_catalog.yaml`
