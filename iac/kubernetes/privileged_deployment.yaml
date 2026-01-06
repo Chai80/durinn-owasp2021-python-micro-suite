@@ -1,0 +1,32 @@
+# GT: IAC_K8S_01_START
+# Kubernetes manifest intentionally misconfigured for benchmarking IaC scanners.
+#
+# Issues:
+# - privileged container
+# - allowPrivilegeEscalation enabled
+# - runAsNonRoot not enforced
+# - uses :latest tag
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: insecure-privileged-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: insecure-privileged
+  template:
+    metadata:
+      labels:
+        app: insecure-privileged
+    spec:
+      containers:
+        - name: app
+          image: nginx:latest
+          securityContext:
+            privileged: true
+            allowPrivilegeEscalation: true
+          ports:
+            - containerPort: 80
+# GT: IAC_K8S_01_END

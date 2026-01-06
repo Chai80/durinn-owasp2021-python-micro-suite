@@ -1,0 +1,23 @@
+# GT: IAC_K8S_02_START
+# Kubernetes manifest intentionally misconfigured for benchmarking IaC scanners.
+#
+# Issue: hostPath volume mounts the host filesystem into the container.
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: insecure-hostpath-pod
+spec:
+  containers:
+    - name: app
+      image: alpine:latest
+      command: ["sh", "-c", "sleep 3600"]
+      volumeMounts:
+        - name: host-root
+          mountPath: /host
+  volumes:
+    - name: host-root
+      hostPath:
+        path: /
+        type: Directory
+# GT: IAC_K8S_02_END
