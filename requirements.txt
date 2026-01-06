@@ -1,1 +1,12 @@
-Flask==3.0.3
+# OWASP 2021 A06 is primarily about dependency risk (SCA), not code-level SAST.
+# These are intentionally OLD versions used as an SCA positive-control.
+Flask==0.12
+Werkzeug==0.16.1
+Jinja2==2.10
+requests==2.19.1
+urllib3==1.24.1
+PyYAML==3.13
+Django==1.11
+Pillow==6.2.0
+cryptography==2.3
+PyJWT==1.7.1
