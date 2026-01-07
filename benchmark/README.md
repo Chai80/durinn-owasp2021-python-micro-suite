@@ -26,6 +26,11 @@ When scoring results, treat each GT id as a unit. For example:
 - **Extended SAST** = `tracks.sast.extended_sast.gt_ids`
 - Exclude **Out-of-scope for SAST** from SAST scoring so tools aren't penalized for problems they cannot detect statically.
 
+**Note on negative controls.** `gt_catalog.yaml` may contain a small number of GT blocks that are intentionally **safe**
+(added for comparison). These IDs are **not** included in the scored sets in `suite_sets.yaml`, so tools are not penalized
+for "missing" them. If a tool reports them anyway, they will appear as out-of-catalog findings (false-positive candidates).
+Example: `OWASP2021_A05_CFG_08` sets `X-Content-Type-Options: nosniff` and is intentionally safe.
+
 ## IaC track (recommended)
 
 If you want an IaC benchmark that works across tools, create a dedicated branch (recommended name: `iac-core-terraform-k8s`)
