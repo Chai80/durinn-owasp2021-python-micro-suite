@@ -34,7 +34,7 @@ def main():
     ids = [it["id"] for it in yaml.safe_load(gt.read_text(encoding="utf-8")).get("items", [])]
 
     # Default behavior: keep everything as extended, except A01/A04/A09 default out-of-scope
-    if owasp in ("A01","A04","A09"):
+    if owasp in ("A01","A04","A06","A09"):
         extended = []
         out_scope = ids
     else:
