@@ -13,21 +13,17 @@ def current_branch() -> str:
         v = os.environ.get(k)
         if v:
             return v
-    try:
-        return subprocess.check_output(["git", "rev-parse", "--abbrev-ref", "HEAD"], text=True).strip()
-    except Exception:
-        return "UNKNOWN"
+    return subprocess.check_output(["git", "rev-parse", "--abbrev-ref", "HEAD"], text=True).strip()
 
 def scan_gt_ids_in_app():
     ids = {}
     for p in Path("app").rglob("*.py"):
-        if any(part in (".venv", "venv", "site-packages") for part in p.parts):
+        if any(part in (".venv","venv","site-packages") for part in p.parts):
             continue
         for i, line in enumerate(p.read_text(encoding="utf-8", errors="ignore").splitlines(), start=1):
             m = GT_RE.search(line)
-            if not m:
-                continue
-            ids.setdefault(m.group("id"), []).append((p.as_posix(), i, m.group("tag")))
+            if m:
+                ids.setdefault(m.group("id"), []).append((p.as_posix(), i, m.group("tag")))
     return ids
 
 def main(argv):
@@ -59,12 +55,10 @@ def main(argv):
         required.add(f"a{num}.py")
         allowed.add(f"a{num}.py")
     else:
-        # A06 is SCA/out-of-scope for SAST: allow optional a06.py but don't require it
-        allowed.add("a06.py")
+        allowed.add("a06.py")  # optional
 
     missing = sorted(required - found)
     extra = sorted(found - allowed)
-
     if missing:
         print(f"[purity] FAIL: missing required route files: {missing}")
         return 2
@@ -73,6 +67,7 @@ def main(argv):
         return 2
 
     gt_map = scan_gt_ids_in_app()
+
     if not gt_map:
         if is_a06:
             print("[purity] OK: No GT markers for A06 (SCA/out-of-scope for SAST).")
@@ -80,37 +75,30 @@ def main(argv):
             print("[purity] FAIL: No GT markers found under app/")
             return 2
     else:
-        wrong_ids = [gt_id for gt_id in gt_map if not gt_id.startswith(f"OWASP2021_{expected}_")]
+        wrong_ids = [gid for gid in gt_map if not gid.startswith(f"OWASP2021_{expected}_")]
         if wrong_ids:
-            print(f"[purity] FAIL: Found GT ids not matching {expected}:")
-            for gt_id in sorted(wrong_ids):
-                print(f"  - {gt_id}")
+            print(f"[purity] FAIL: Found GT ids not matching {expected}: {sorted(wrong_ids)}")
             return 2
 
-        bad_pairs = []
-        for gt_id, occ in gt_map.items():
+        for gid, occ in gt_map.items():
             tags = [t for _, _, t in occ]
             if tags.count("START") != 1 or tags.count("END") != 1:
-                bad_pairs.append((gt_id, occ))
-        if bad_pairs:
-            print("[purity] FAIL: Bad START/END pairing:")
-            for gt_id, occ in bad_pairs:
-                print(f"  - {gt_id}: {occ}")
-            return 2
+                print(f"[purity] FAIL: Bad START/END pairing for {gid}: {occ}")
+                return 2
 
         primary = sorted([i for i in gt_map if re.match(rf"^OWASP2021_{expected}_\d{{2}}$", i)])
-        if not is_a06:
-            if len(primary) != 10:
-                msg = f"[purity] {'FAIL' if strict_10 else 'WARN'}: expected 10 primary numeric IDs, found {len(primary)}: {primary}"
-                print(msg)
-                if strict_10:
-                    return 2
+        if not is_a06 and len(primary) != 10:
+            msg = f"[purity] {'FAIL' if strict_10 else 'WARN'}: expected 10 numeric IDs, found {len(primary)}: {primary}"
+            print(msg)
+            if strict_10:
+                return 2
 
-    # Benchmark files should be branch-local: no other OWASP categories referenced
+    # branch-local benchmark files should not reference other OWASP categories
     for rel in ("benchmark/gt_catalog.yaml", "benchmark/suite_sets.yaml"):
         p = Path(rel)
         if not p.exists():
-            print(f"[purity] {'FAIL' if strict_benchmark else 'WARN'}: missing {rel}")
+            msg = f"[purity] {'FAIL' if strict_benchmark else 'WARN'}: missing {rel}"
+            print(msg)
             if strict_benchmark:
                 return 2
             continue
@@ -118,7 +106,8 @@ def main(argv):
         txt = p.read_text(encoding="utf-8", errors="ignore")
         bad = [x for x in re.findall(r"OWASP2021_A(\d{2})_[A-Z0-9_]+", txt) if x != num]
         if bad:
-            print(f"[purity] {'FAIL' if strict_benchmark else 'WARN'}: {rel} references other OWASP categories (expected only A{num})")
+            msg = f"[purity] {'FAIL' if strict_benchmark else 'WARN'}: {rel} references other OWASP categories"
+            print(msg)
             if strict_benchmark:
                 return 2
 
