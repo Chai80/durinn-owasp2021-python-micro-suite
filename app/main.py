@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify
 
 from app.routes.health import bp as health_bp
 from app.routes.a05 import bp as a05_bp
