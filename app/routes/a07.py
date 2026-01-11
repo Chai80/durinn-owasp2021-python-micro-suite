@@ -61,18 +61,6 @@ def a07_03_login_bypass_username_only():
     return jsonify({"ok": True, "token": token})
 
 
-@bp.get("/me")
-def a07_04_token_in_url():
-    # GT:OWASP2021_A07_04_START
-    token = request.args.get("token", "")  # tokens in URL (leaks via logs/history)
-    # GT:OWASP2021_A07_04_END
-
-    username = SESSIONS.get(token)
-    if not username:
-        return jsonify({"error": "unauthorized"}), 401
-    return jsonify({"ok": True, "username": username})
-
-
 @bp.post("/reset/request")
 def a07_06_reset_token_predictable():
     body = request.json or {}
