@@ -91,8 +91,8 @@ def a10_06_socket_connect():
 def a10_07_fetch_metadata_default():
     # GT:OWASP2021_A10_07_START
     url = request.args.get("url", "http://169.254.169.254/")  # defaults to metadata IP
-    # GT:OWASP2021_A10_07_END
     r = requests.get(url, timeout=3)
+    # GT:OWASP2021_A10_07_END
     return Response(r.text[:500], mimetype="text/plain")
 
 
