@@ -1,108 +1,20 @@
 version: 1
 suite: durinn-owasp2021-python-micro-suite
+branch: owasp2021-a04-insecure-design
+owasp: A04
 scanners_under_test:
 - aikido
-- snyk
 - semgrep
+- snyk
 - sonarqube
 tracks:
   sast:
     core_sast_intersection:
-      description: High-signal, pattern-based code vulns expected to be detected by most tools out-of-the-box.
-      gt_ids:
-      - OWASP2021_A03_04
-      - OWASP2021_A03_05
-      - OWASP2021_A03_06
-      - OWASP2021_A03_07
-      - OWASP2021_A03_10
-      - OWASP2021_A03_11
-      - OWASP2021_A05_CFG_04
-      - OWASP2021_A08_01
-      - OWASP2021_A08_02
-      - OWASP2021_A08_03
-      - OWASP2021_A08_04
-      - OWASP2021_A08_05
-      - OWASP2021_A10_01
+      gt_ids: []
     extended_sast:
-      description: Still static in nature, but more tool-dependent (some scanners will catch, some won't).
-      gt_ids:
-      - OWASP2021_A02_01
-      - OWASP2021_A02_02
-      - OWASP2021_A02_03
-      - OWASP2021_A02_04
-      - OWASP2021_A02_05
-      - OWASP2021_A02_06
-      - OWASP2021_A02_07
-      - OWASP2021_A02_08
-      - OWASP2021_A02_09
-      - OWASP2021_A02_10
-      - OWASP2021_A03_01
-      - OWASP2021_A03_03
-      - OWASP2021_A03_08
-      - OWASP2021_A03_09
-      - OWASP2021_A05_01
-      - OWASP2021_A05_02
-      - OWASP2021_A05_03
-      - OWASP2021_A05_05
-      - OWASP2021_A05_08
-      - OWASP2021_A05_09
-      - OWASP2021_A05_CFG_01
-      - OWASP2021_A05_CFG_02
-      - OWASP2021_A05_CFG_03
-      - OWASP2021_A05_CFG_05
-      - OWASP2021_A05_CFG_06
-      - OWASP2021_A05_CFG_07
-      - OWASP2021_A05_CFG_08
-      - OWASP2021_A05_CFG_09
-      - OWASP2021_A05_CFG_10
-      - OWASP2021_A07_01
-      - OWASP2021_A07_02
-      - OWASP2021_A07_03
-      - OWASP2021_A07_04
-      - OWASP2021_A07_05
-      - OWASP2021_A07_06
-      - OWASP2021_A07_07
-      - OWASP2021_A07_08
-      - OWASP2021_A07_09
-      - OWASP2021_A07_10
-      - OWASP2021_A07_11
-      - OWASP2021_A08_06
-      - OWASP2021_A08_07
-      - OWASP2021_A08_08
-      - OWASP2021_A08_09
-      - OWASP2021_A08_10
-      - OWASP2021_A09_01
-      - OWASP2021_A09_02
-      - OWASP2021_A09_03
-      - OWASP2021_A09_04
-      - OWASP2021_A09_05
-      - OWASP2021_A09_06
-      - OWASP2021_A09_07
-      - OWASP2021_A09_08
-      - OWASP2021_A09_09
-      - OWASP2021_A09_10
-      - OWASP2021_A10_02
-      - OWASP2021_A10_03
-      - OWASP2021_A10_04
-      - OWASP2021_A10_05
-      - OWASP2021_A10_06
-      - OWASP2021_A10_07
-      - OWASP2021_A10_08
-      - OWASP2021_A10_09
-      - OWASP2021_A10_10
+      gt_ids: []
     out_of_scope_for_sast:
-      description: Primarily business-logic/design/operational controls; not reliably detectable via SAST.
       gt_ids:
-      - OWASP2021_A01_01
-      - OWASP2021_A01_02
-      - OWASP2021_A01_03
-      - OWASP2021_A01_04
-      - OWASP2021_A01_05
-      - OWASP2021_A01_06
-      - OWASP2021_A01_07
-      - OWASP2021_A01_08
-      - OWASP2021_A01_09
-      - OWASP2021_A01_10
       - OWASP2021_A04_01
       - OWASP2021_A04_02
       - OWASP2021_A04_03
@@ -113,11 +25,10 @@ tracks:
       - OWASP2021_A04_08
       - OWASP2021_A04_09
       - OWASP2021_A04_10
-  sca:
-    cases:
-    - branch: owasp2021-a06-vulnerable-outdated-components
-      notes: SCA/SBOM style findings from dependencies. This branch relies on requirements.txt (no GT markers).
-  iac:
-    planned_cases:
-    - branch: iac-core-terraform-k8s
-      notes: Add this branch to benchmark IaC scanners (Terraform + Kubernetes misconfigs). See benchmark/README.md.
+    negative_controls:
+      gt_ids: []
+    tool_expected:
+      aikido: []
+      semgrep: []
+      snyk: []
+      sonarqube: []
