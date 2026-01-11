@@ -15,10 +15,22 @@ items:
   file: app/routes/a05.py
   start_line: 28
   end_line: 30
+- id: OWASP2021_A05_04
+  file: app/main.py
+  start_line: 10
+  end_line: 12
 - id: OWASP2021_A05_05
   file: app/routes/a05.py
   start_line: 41
   end_line: 43
+- id: OWASP2021_A05_06
+  file: app/main.py
+  start_line: 31
+  end_line: 33
+- id: OWASP2021_A05_07
+  file: app/main.py
+  start_line: 35
+  end_line: 37
 - id: OWASP2021_A05_08
   file: app/routes/a05.py
   start_line: 63
@@ -27,43 +39,7 @@ items:
   file: app/routes/a05.py
   start_line: 70
   end_line: 72
-- id: OWASP2021_A05_CFG_01
+- id: OWASP2021_A05_10
   file: app/main.py
-  start_line: 10
-  end_line: 12
-- id: OWASP2021_A05_CFG_02
-  file: app/main.py
-  start_line: 14
-  end_line: 16
-- id: OWASP2021_A05_CFG_03
-  file: app/main.py
-  start_line: 18
-  end_line: 20
-- id: OWASP2021_A05_CFG_04
-  file: app/main.py
-  start_line: 22
-  end_line: 24
-- id: OWASP2021_A05_CFG_05
-  file: app/main.py
-  start_line: 26
-  end_line: 28
-- id: OWASP2021_A05_CFG_06
-  file: app/main.py
-  start_line: 39
-  end_line: 41
-- id: OWASP2021_A05_CFG_07
-  file: app/main.py
-  start_line: 43
-  end_line: 45
-- id: OWASP2021_A05_CFG_08
-  file: app/main.py
-  start_line: 47
-  end_line: 49
-- id: OWASP2021_A05_CFG_09
-  file: app/main.py
-  start_line: 55
-  end_line: 58
-- id: OWASP2021_A05_CFG_10
-  file: app/main.py
-  start_line: 66
-  end_line: 68
+  start_line: 54
+  end_line: 56
