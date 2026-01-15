@@ -1,0 +1,45 @@
+version: 1
+suite: durinn-owasp2021-python-micro-suite
+branch: owasp2021-a02-cryptographic-failures
+owasp: A02
+items:
+- id: OWASP2021_A02_01
+  file: app/routes/a02.py
+  start_line: 19
+  end_line: 21
+- id: OWASP2021_A02_02
+  file: app/routes/a02.py
+  start_line: 30
+  end_line: 32
+- id: OWASP2021_A02_03
+  file: app/routes/a02.py
+  start_line: 41
+  end_line: 43
+- id: OWASP2021_A02_04
+  file: app/routes/a02.py
+  start_line: 52
+  end_line: 55
+- id: OWASP2021_A02_05
+  file: app/routes/a02.py
+  start_line: 62
+  end_line: 64
+- id: OWASP2021_A02_06
+  file: app/routes/a02.py
+  start_line: 70
+  end_line: 72
+- id: OWASP2021_A02_07
+  file: app/routes/a02.py
+  start_line: 80
+  end_line: 83
+- id: OWASP2021_A02_08
+  file: app/routes/a02.py
+  start_line: 92
+  end_line: 94
+- id: OWASP2021_A02_09
+  file: app/routes/a02.py
+  start_line: 104
+  end_line: 106
+- id: OWASP2021_A02_10
+  file: app/routes/a02.py
+  start_line: 116
+  end_line: 118
