@@ -1,0 +1,45 @@
+version: 1
+suite: durinn-owasp2021-python-micro-suite
+branch: owasp2021-a09-security-logging-monitoring-failures
+owasp: A09
+items:
+- id: OWASP2021_A09_01
+  file: app/routes/a09.py
+  start_line: 24
+  end_line: 26
+- id: OWASP2021_A09_02
+  file: app/routes/a09.py
+  start_line: 35
+  end_line: 37
+- id: OWASP2021_A09_03
+  file: app/routes/a09.py
+  start_line: 47
+  end_line: 49
+- id: OWASP2021_A09_04
+  file: app/routes/a09.py
+  start_line: 58
+  end_line: 60
+- id: OWASP2021_A09_05
+  file: app/routes/a09.py
+  start_line: 70
+  end_line: 72
+- id: OWASP2021_A09_06
+  file: app/routes/a09.py
+  start_line: 82
+  end_line: 84
+- id: OWASP2021_A09_07
+  file: app/routes/a09.py
+  start_line: 90
+  end_line: 92
+- id: OWASP2021_A09_08
+  file: app/routes/a09.py
+  start_line: 102
+  end_line: 105
+- id: OWASP2021_A09_09
+  file: app/routes/a09.py
+  start_line: 112
+  end_line: 115
+- id: OWASP2021_A09_10
+  file: app/routes/a09.py
+  start_line: 121
+  end_line: 124
