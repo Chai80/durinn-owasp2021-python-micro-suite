@@ -1,0 +1,45 @@
+version: 1
+suite: durinn-owasp2021-python-micro-suite
+branch: owasp2021-a04-insecure-design
+owasp: A04
+items:
+- id: OWASP2021_A04_01
+  file: app/routes/a04.py
+  start_line: 27
+  end_line: 29
+- id: OWASP2021_A04_02
+  file: app/routes/a04.py
+  start_line: 40
+  end_line: 43
+- id: OWASP2021_A04_03
+  file: app/routes/a04.py
+  start_line: 54
+  end_line: 56
+- id: OWASP2021_A04_04
+  file: app/routes/a04.py
+  start_line: 67
+  end_line: 69
+- id: OWASP2021_A04_05
+  file: app/routes/a04.py
+  start_line: 80
+  end_line: 82
+- id: OWASP2021_A04_06
+  file: app/routes/a04.py
+  start_line: 93
+  end_line: 95
+- id: OWASP2021_A04_07
+  file: app/routes/a04.py
+  start_line: 106
+  end_line: 108
+- id: OWASP2021_A04_08
+  file: app/routes/a04.py
+  start_line: 117
+  end_line: 119
+- id: OWASP2021_A04_09
+  file: app/routes/a04.py
+  start_line: 129
+  end_line: 132
+- id: OWASP2021_A04_10
+  file: app/routes/a04.py
+  start_line: 144
+  end_line: 147
