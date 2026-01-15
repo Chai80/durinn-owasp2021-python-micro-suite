@@ -1,0 +1,5 @@
+version: 1
+suite: durinn-owasp2021-python-micro-suite
+branch: owasp2021-a06-vulnerable-outdated-components
+owasp: A06
+items: []
