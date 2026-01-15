@@ -13,3 +13,7 @@ coverage/
 
 # backups
 *.bak
+
+# local branch export artifacts
+/durinn-owasp2021-python-micro-suite_BRANCH_EXPORT/
+/durinn-owasp2021-python-micro-suite_BRANCH_EXPORT.zip

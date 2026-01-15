@@ -1,0 +1,45 @@
+version: 1
+suite: durinn-owasp2021-python-micro-suite
+branch: owasp2021-a05-security-misconfiguration
+owasp: A05
+items:
+- id: OWASP2021_A05_01
+  file: app/routes/a05.py
+  start_line: 12
+  end_line: 14
+- id: OWASP2021_A05_02
+  file: app/routes/a05.py
+  start_line: 19
+  end_line: 21
+- id: OWASP2021_A05_03
+  file: app/routes/a05.py
+  start_line: 28
+  end_line: 30
+- id: OWASP2021_A05_04
+  file: app/main.py
+  start_line: 10
+  end_line: 12
+- id: OWASP2021_A05_05
+  file: app/routes/a05.py
+  start_line: 41
+  end_line: 43
+- id: OWASP2021_A05_06
+  file: app/main.py
+  start_line: 31
+  end_line: 33
+- id: OWASP2021_A05_07
+  file: app/main.py
+  start_line: 35
+  end_line: 37
+- id: OWASP2021_A05_08
+  file: app/routes/a05.py
+  start_line: 63
+  end_line: 65
+- id: OWASP2021_A05_09
+  file: app/routes/a05.py
+  start_line: 70
+  end_line: 72
+- id: OWASP2021_A05_10
+  file: app/main.py
+  start_line: 54
+  end_line: 56
