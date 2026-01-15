@@ -1,0 +1,45 @@
+version: 1
+suite: durinn-owasp2021-python-micro-suite
+branch: owasp2021-a07-identification-authentication-failures
+owasp: A07
+items:
+- id: OWASP2021_A07_01
+  file: app/routes/a07.py
+  start_line: 29
+  end_line: 31
+- id: OWASP2021_A07_02
+  file: app/routes/a07.py
+  start_line: 42
+  end_line: 45
+- id: OWASP2021_A07_03
+  file: app/routes/a07.py
+  start_line: 56
+  end_line: 59
+- id: OWASP2021_A07_05
+  file: app/routes/a07.py
+  start_line: 18
+  end_line: 20
+- id: OWASP2021_A07_06
+  file: app/routes/a07.py
+  start_line: 69
+  end_line: 72
+- id: OWASP2021_A07_07
+  file: app/routes/a07.py
+  start_line: 83
+  end_line: 85
+- id: OWASP2021_A07_08
+  file: app/routes/a07.py
+  start_line: 99
+  end_line: 101
+- id: OWASP2021_A07_09
+  file: app/routes/a07.py
+  start_line: 112
+  end_line: 114
+- id: OWASP2021_A07_10
+  file: app/routes/a07.py
+  start_line: 124
+  end_line: 126
+- id: OWASP2021_A07_11
+  file: app/routes/a07.py
+  start_line: 138
+  end_line: 140
