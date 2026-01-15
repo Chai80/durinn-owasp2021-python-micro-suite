@@ -1,0 +1,45 @@
+version: 1
+suite: durinn-owasp2021-python-micro-suite
+branch: owasp2021-a10-ssrf
+owasp: A10
+items:
+- id: OWASP2021_A10_01
+  file: app/routes/a10.py
+  start_line: 16
+  end_line: 18
+- id: OWASP2021_A10_02
+  file: app/routes/a10.py
+  start_line: 27
+  end_line: 29
+- id: OWASP2021_A10_03
+  file: app/routes/a10.py
+  start_line: 39
+  end_line: 41
+- id: OWASP2021_A10_04
+  file: app/routes/a10.py
+  start_line: 50
+  end_line: 52
+- id: OWASP2021_A10_05
+  file: app/routes/a10.py
+  start_line: 65
+  end_line: 70
+- id: OWASP2021_A10_06
+  file: app/routes/a10.py
+  start_line: 80
+  end_line: 85
+- id: OWASP2021_A10_07
+  file: app/routes/a10.py
+  start_line: 92
+  end_line: 95
+- id: OWASP2021_A10_08
+  file: app/routes/a10.py
+  start_line: 103
+  end_line: 105
+- id: OWASP2021_A10_09
+  file: app/routes/a10.py
+  start_line: 114
+  end_line: 116
+- id: OWASP2021_A10_10
+  file: app/routes/a10.py
+  start_line: 125
+  end_line: 127
