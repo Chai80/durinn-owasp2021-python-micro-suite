@@ -1,0 +1,45 @@
+version: 1
+suite: durinn-owasp2021-python-micro-suite
+branch: owasp2021-a03-injection
+owasp: A03
+items:
+- id: OWASP2021_A03_01
+  file: app/routes/a03.py
+  start_line: 21
+  end_line: 23
+- id: OWASP2021_A03_03
+  file: app/routes/a03.py
+  start_line: 40
+  end_line: 42
+- id: OWASP2021_A03_04
+  file: app/routes/a03.py
+  start_line: 51
+  end_line: 54
+- id: OWASP2021_A03_05
+  file: app/routes/a03.py
+  start_line: 63
+  end_line: 66
+- id: OWASP2021_A03_06
+  file: app/routes/a03.py
+  start_line: 75
+  end_line: 77
+- id: OWASP2021_A03_07
+  file: app/routes/a03.py
+  start_line: 86
+  end_line: 88
+- id: OWASP2021_A03_08
+  file: app/routes/a03.py
+  start_line: 98
+  end_line: 100
+- id: OWASP2021_A03_09
+  file: app/routes/a03.py
+  start_line: 109
+  end_line: 112
+- id: OWASP2021_A03_10
+  file: app/routes/a03.py
+  start_line: 122
+  end_line: 125
+- id: OWASP2021_A03_11
+  file: app/routes/a03.py
+  start_line: 135
+  end_line: 137
