@@ -39,5 +39,9 @@ machine-readable definition of **benchmark sets** under [`benchmark/`](benchmark
 
 Start with:
 
-- `benchmark/suite_sets.yaml`
-- `benchmark/gt_catalog.yaml`
+- `benchmark/suite_sets.yaml` (benchmark sets / tracks)
+- `benchmark/branch_tracks.yaml` (which branches to run per track)
+- `benchmark/catalog/gt_catalog.yaml` (canonical suite catalog)
+
+Note: `benchmark/gt_catalog.yaml` is **empty** on meta branches (`main`, `benchmark-hygiene`) to avoid GT contamination.
+OWASP category branches generate their own per-branch `benchmark/gt_catalog.yaml` from in-code GT markers.

@@ -10,3 +10,8 @@ build/
 coverage/
 .pytest_cache/
 .DS_Store
+
+# Benchmark helper artifacts
+benchmark/rules_inventory/*.csv
+benchmark/rules_inventory/*.pdf
+benchmark/rules_inventory/*.txt
