@@ -45,3 +45,10 @@ Start with:
 
 Note: `benchmark/gt_catalog.yaml` is **empty** on meta branches (`main`, `benchmark-hygiene`) to avoid GT contamination.
 OWASP category branches generate their own per-branch `benchmark/gt_catalog.yaml` from in-code GT markers.
+### Scoring / interpreting results (TP/FP/FN)
+
+See [`benchmark_SCORING_GUIDE.md`](benchmark_SCORING_GUIDE.md) for:
+- how GT is defined (markers vs YAML),
+- what counts as TP/FP/FN in this suite,
+- track split (SAST core vs out-of-scope vs SCA),
+- and how “safe twins” create FP pressure for meaningful precision metrics.
